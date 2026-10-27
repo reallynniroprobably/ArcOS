@@ -3,12 +3,6 @@
 version = 4
 
 [[package]]
-name = "allocator-api2"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c880a97d28a3681c0267bd29cff89621202715b065127cd445fa0f0fe0aa2880"
-
-[[package]]
 name = "bitflags"
 version = "2.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -19,8 +13,8 @@ name = "foody_client"
 version = "0.1.0"
 dependencies = [
  "limine",
- "spinning_top",
- "talc",
+ "linked_list_allocator",
+ "spinning_top 0.3.0",
  "uart_16550",
 ]
 
@@ -29,6 +23,15 @@ name = "limine"
 version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "29363c0f37e66e18575fadf7141c56ee7ea04ae5fecbeb25eff303f77af203a9"
+
+[[package]]
+name = "linked_list_allocator"
+version = "0.10.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2b23ac50abb8261cb38c6e2a7192d3302e0836dac1628f6a93b82b4fad185897"
+dependencies = [
+ "spinning_top 0.2.5",
+]
 
 [[package]]
 name = "lock_api"
@@ -47,20 +50,19 @@ checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 
 [[package]]
 name = "spinning_top"
-version = "0.3.0"
+version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d96d2d1d716fb500937168cc09353ffdc7a012be8475ac7308e1bdf0e3923300"
+checksum = "5b9eb1a2f4c41445a3a0ff9abc5221c5fcd28e1f13cd7c0397706f9ac938ddb0"
 dependencies = [
  "lock_api",
 ]
 
 [[package]]
-name = "talc"
-version = "5.1.1"
+name = "spinning_top"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "53f8ad14fa1c1b8635114abf9721076fe1e869572a5f26a52690f407292c80dc"
+checksum = "d96d2d1d716fb500937168cc09353ffdc7a012be8475ac7308e1bdf0e3923300"
 dependencies = [
- "allocator-api2",
  "lock_api",
 ]
 
