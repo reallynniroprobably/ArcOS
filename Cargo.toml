@@ -1,0 +1,37 @@
+[package]
+name = "foody_client"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "foody_client"
+test = false
+bench = false
+
+[dependencies]
+limine = "0.6.5"
+spinning_top = "0.3.0"
+talc = "5.1.1"
+uart_16550 = "0.9.0"
+
+# cargo-image-runner config
+[package.metadata.image-runner.boot]
+type = "hybrid"
+
+[package.metadata.image-runner.bootloader]
+kind = "limine"
+config-file = "limine.conf"
+
+[package.metadata.image-runner.image]
+format = "iso"
+output = "foody-kernel.iso"
+
+[package.metadata.image-runner.variables]
+TIMEOUT = "5"
+KERNEL_CMDLINE = "quiet"
+
+[package.metadata.image-runner.runner]
+kind = "qemu"
+
+[package.metadata.image-runner.runner.qemu.serial]
+mode = "stdio"
