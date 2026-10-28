@@ -21,13 +21,17 @@ pub extern "C" fn _start() -> ! {
     
     println!("Foody client operating system initialising...");
 
-    println!("Initialising memory");
-    memory::init_heap();
+    println!("Initiating memory");
     
-    println!("Initialising framebuffer...");
+    memory::init_heap();
+
+    println!("Sucessfully initiated memory");
+    
+    println!("Initiating framebuffer...");
 
     let mut framebuffer: Framebuffer = Framebuffer::new();
 
+    println!("Sucessfully initiated framebuffer");
     
     framebuffer.clear(&Colour::from_rgb(255, 199, 44)).unwrap();
 
