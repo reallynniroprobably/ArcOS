@@ -2,7 +2,7 @@
 
 use linked_list_allocator::LockedHeap;
 
-use limine::{memmap::{Entry, MEMMAP_USABLE}, request::{HhdmRequest, MemmapRequest}};
+use limine::{memmap::{MEMMAP_USABLE}, request::{HhdmRequest, MemmapRequest}};
 
 // Request passed to limine to get hardware memory map at boot
 #[used]
