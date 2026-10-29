@@ -38,7 +38,7 @@ pub fn _print(args: Arguments) {
 
 #[macro_export]
 macro_rules! print {
-    ($($arg:tt)*) => ($crate::console::_print(format_args!($($arg)*)));
+    ($($arg:tt)*) => ($crate::serial::_print(format_args!($($arg)*)));
 }
 
 #[macro_export]
