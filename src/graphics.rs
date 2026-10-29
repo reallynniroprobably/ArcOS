@@ -87,7 +87,6 @@ impl Framebuffer {
 
     pub fn bitmap(&mut self, bitmap: &Bitmap, mut x: u64, mut y: u64, scale: f32) -> Result<(), &'static str> {
         for row in &bitmap.rows {
-            #[allow(unused_assignments)]
             let mut len: usize = 0;
             let mut last_val: u8 = 0;
             for (index, pixel) in row.pixels.iter().enumerate() {
