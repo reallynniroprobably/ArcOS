@@ -7,6 +7,7 @@ extern crate alloc;
 mod memory;
 mod graphics;
 mod console;
+mod shutdown;
 
 use crate::graphics::{Colour, Framebuffer};
 
