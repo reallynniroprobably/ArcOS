@@ -1,10 +1,10 @@
 [package]
-name = "foody_client"
+name = "rcos"
 version = "0.1.0"
 edition = "2024"
 
 [[bin]]
-name = "foody_client"
+name = "rcos"
 test = false
 bench = false
 

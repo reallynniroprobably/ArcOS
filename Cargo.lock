@@ -9,17 +9,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3ded4057c258ba199e2d26386d3af3780957ecaee6c4ef4041c6b4b8b97c0b06"
 
 [[package]]
-name = "foody_client"
-version = "0.1.0"
-dependencies = [
- "lazy_static",
- "limine",
- "linked_list_allocator",
- "spin 0.12.3",
- "uart_16550",
-]
-
-[[package]]
 name = "lazy_static"
 version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -50,6 +39,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "224399e74b87b5f3557511d98dff8b14089b3dadafcab6bb93eab67d3aace965"
 dependencies = [
  "scopeguard",
+]
+
+[[package]]
+name = "rcos"
+version = "0.1.0"
+dependencies = [
+ "lazy_static",
+ "limine",
+ "linked_list_allocator",
+ "spin 0.12.3",
+ "uart_16550",
 ]
 
 [[package]]
