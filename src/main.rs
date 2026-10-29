@@ -9,12 +9,12 @@ mod graphics;
 mod console;
 mod shutdown;
 
-use crate::graphics::{Colour, Framebuffer};
+use crate::{graphics::{Colour, Framebuffer}, shutdown::shutdown};
 
 #[panic_handler]
 fn panic(info: &core::panic::PanicInfo) -> ! {
     println!("PANIC: {}", info.message());
-    loop { }
+    shutdown();
 }
 
 #[unsafe(no_mangle)]
@@ -39,5 +39,5 @@ pub extern "C" fn _start() -> ! {
 
     framebuffer.swap();
     
-    loop { }
+    shutdown();
 }
