@@ -19,28 +19,19 @@ fn panic(info: &core::panic::PanicInfo) -> ! {
 
 #[unsafe(no_mangle)]
 pub extern "C" fn _start() -> ! {
-    println!();
-    println!();
-    println!();
-    
-    println!("Foody client operating system initialising...");
-    println!();
+    println!("\n\n\nReally cool operating system initialising...\n");
 
     println!("Initiating memory");
     
     memory::init_heap();
 
-    println!("Sucessfully initiated memory");
-
-    println!();
+    println!("Sucessfully initiated memory\n");
     
     println!("Initiating framebuffer...");
 
     let mut framebuffer: Framebuffer = Framebuffer::new();
 
-    println!("Sucessfully initiated framebuffer");
-
-    println!();
+    println!("Sucessfully initiated framebuffer\n");
     
     framebuffer.clear(&Colour::from_rgb(255, 199, 44)).unwrap();
 
